@@ -14,7 +14,7 @@ db = SQLAlchemy(metadata=metadata)
 
 from app.models.categories import *
 from app.models.questions import *
-from app.models.response import *
+from app.models.responses import *
 
 
 # flask db init - # Инициализирует миграции (Создает папки "migrations" и "instance")
@@ -29,12 +29,15 @@ from app.models.response import *
 # cd instance
 # sqlite3
 #
+# .mode column  # включить красивый вывод табличных данных
 # .open foo.db  # подключиться к БД ()
 # .tables  # просмотреть таблицы БД
-# .mode column  # включить красивый вывод табличных данных
 # PRAGMA table_info(categories);  # показать информацию о таблице "categories"
 # PRAGMA table_info(questions);  # показать информацию о таблице "questions"
 # PRAGMA foreign_key_list(questions);  # показать информацию о таблице "questions"
 # PRAGMA foreign_key_list(responses);  # показать информацию о таблице "responses"
-# SELECT sql FROM sqlite_master WHERE type='table' AND name='responses';  # показать скрипт SQL которым была создана таблица "responses"
-
+# SELECT sql FROM sqlite_master WHERE type='table' AND name='responses';  # показать скрипт SQL которым
+#                                                                           была создана таблица "responses"
+#
+# DELETE FROM questions; DELETE FROM statistics; DELETE FROM responses; DELETE FROM categories;
+# SELECT * FROM questions;
